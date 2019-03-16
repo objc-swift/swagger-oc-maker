@@ -1,0 +1,575 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DDEFE47C223CDA00003E3263 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEFE47B223CDA00003E3263 /* AppDelegate.m */; };
+		DDEFE47F223CDA00003E3263 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEFE47E223CDA00003E3263 /* ViewController.m */; };
+		DDEFE481223CDA03003E3263 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDEFE480223CDA03003E3263 /* Assets.xcassets */; };
+		DDEFE484223CDA03003E3263 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDEFE482223CDA03003E3263 /* Main.storyboard */; };
+		DDEFE487223CDA03003E3263 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEFE486223CDA03003E3263 /* main.m */; };
+		DDEFE492223CDA04003E3263 /* AutoAPIMakerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEFE491223CDA04003E3263 /* AutoAPIMakerTests.m */; };
+		DDEFE49D223CDA04003E3263 /* AutoAPIMakerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEFE49C223CDA04003E3263 /* AutoAPIMakerUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DDEFE48E223CDA04003E3263 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDEFE46F223CDA00003E3263 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDEFE476223CDA00003E3263;
+			remoteInfo = AutoAPIMaker;
+		};
+		DDEFE499223CDA04003E3263 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDEFE46F223CDA00003E3263 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDEFE476223CDA00003E3263;
+			remoteInfo = AutoAPIMaker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DDEFE477223CDA00003E3263 /* AutoAPIMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoAPIMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDEFE47A223CDA00003E3263 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DDEFE47B223CDA00003E3263 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DDEFE47D223CDA00003E3263 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DDEFE47E223CDA00003E3263 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DDEFE480223CDA03003E3263 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DDEFE483223CDA03003E3263 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DDEFE485223CDA03003E3263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDEFE486223CDA03003E3263 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DDEFE488223CDA03003E3263 /* AutoAPIMaker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AutoAPIMaker.entitlements; sourceTree = "<group>"; };
+		DDEFE48D223CDA04003E3263 /* AutoAPIMakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoAPIMakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDEFE491223CDA04003E3263 /* AutoAPIMakerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoAPIMakerTests.m; sourceTree = "<group>"; };
+		DDEFE493223CDA04003E3263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDEFE498223CDA04003E3263 /* AutoAPIMakerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoAPIMakerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDEFE49C223CDA04003E3263 /* AutoAPIMakerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoAPIMakerUITests.m; sourceTree = "<group>"; };
+		DDEFE49E223CDA04003E3263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DDEFE474223CDA00003E3263 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDEFE48A223CDA04003E3263 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDEFE495223CDA04003E3263 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DDEFE46E223CDA00003E3263 = {
+			isa = PBXGroup;
+			children = (
+				DDEFE479223CDA00003E3263 /* AutoAPIMaker */,
+				DDEFE490223CDA04003E3263 /* AutoAPIMakerTests */,
+				DDEFE49B223CDA04003E3263 /* AutoAPIMakerUITests */,
+				DDEFE478223CDA00003E3263 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DDEFE478223CDA00003E3263 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DDEFE477223CDA00003E3263 /* AutoAPIMaker.app */,
+				DDEFE48D223CDA04003E3263 /* AutoAPIMakerTests.xctest */,
+				DDEFE498223CDA04003E3263 /* AutoAPIMakerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DDEFE479223CDA00003E3263 /* AutoAPIMaker */ = {
+			isa = PBXGroup;
+			children = (
+				DDEFE47A223CDA00003E3263 /* AppDelegate.h */,
+				DDEFE47B223CDA00003E3263 /* AppDelegate.m */,
+				DDEFE47D223CDA00003E3263 /* ViewController.h */,
+				DDEFE47E223CDA00003E3263 /* ViewController.m */,
+				DDEFE480223CDA03003E3263 /* Assets.xcassets */,
+				DDEFE482223CDA03003E3263 /* Main.storyboard */,
+				DDEFE485223CDA03003E3263 /* Info.plist */,
+				DDEFE486223CDA03003E3263 /* main.m */,
+				DDEFE488223CDA03003E3263 /* AutoAPIMaker.entitlements */,
+			);
+			path = AutoAPIMaker;
+			sourceTree = "<group>";
+		};
+		DDEFE490223CDA04003E3263 /* AutoAPIMakerTests */ = {
+			isa = PBXGroup;
+			children = (
+				DDEFE491223CDA04003E3263 /* AutoAPIMakerTests.m */,
+				DDEFE493223CDA04003E3263 /* Info.plist */,
+			);
+			path = AutoAPIMakerTests;
+			sourceTree = "<group>";
+		};
+		DDEFE49B223CDA04003E3263 /* AutoAPIMakerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DDEFE49C223CDA04003E3263 /* AutoAPIMakerUITests.m */,
+				DDEFE49E223CDA04003E3263 /* Info.plist */,
+			);
+			path = AutoAPIMakerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DDEFE476223CDA00003E3263 /* AutoAPIMaker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDEFE4A1223CDA04003E3263 /* Build configuration list for PBXNativeTarget "AutoAPIMaker" */;
+			buildPhases = (
+				DDEFE473223CDA00003E3263 /* Sources */,
+				DDEFE474223CDA00003E3263 /* Frameworks */,
+				DDEFE475223CDA00003E3263 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AutoAPIMaker;
+			productName = AutoAPIMaker;
+			productReference = DDEFE477223CDA00003E3263 /* AutoAPIMaker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DDEFE48C223CDA04003E3263 /* AutoAPIMakerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDEFE4A4223CDA04003E3263 /* Build configuration list for PBXNativeTarget "AutoAPIMakerTests" */;
+			buildPhases = (
+				DDEFE489223CDA04003E3263 /* Sources */,
+				DDEFE48A223CDA04003E3263 /* Frameworks */,
+				DDEFE48B223CDA04003E3263 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDEFE48F223CDA04003E3263 /* PBXTargetDependency */,
+			);
+			name = AutoAPIMakerTests;
+			productName = AutoAPIMakerTests;
+			productReference = DDEFE48D223CDA04003E3263 /* AutoAPIMakerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DDEFE497223CDA04003E3263 /* AutoAPIMakerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDEFE4A7223CDA04003E3263 /* Build configuration list for PBXNativeTarget "AutoAPIMakerUITests" */;
+			buildPhases = (
+				DDEFE494223CDA04003E3263 /* Sources */,
+				DDEFE495223CDA04003E3263 /* Frameworks */,
+				DDEFE496223CDA04003E3263 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDEFE49A223CDA04003E3263 /* PBXTargetDependency */,
+			);
+			name = AutoAPIMakerUITests;
+			productName = AutoAPIMakerUITests;
+			productReference = DDEFE498223CDA04003E3263 /* AutoAPIMakerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DDEFE46F223CDA00003E3263 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = MVC;
+				TargetAttributes = {
+					DDEFE476223CDA00003E3263 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					DDEFE48C223CDA04003E3263 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = DDEFE476223CDA00003E3263;
+					};
+					DDEFE497223CDA04003E3263 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = DDEFE476223CDA00003E3263;
+					};
+				};
+			};
+			buildConfigurationList = DDEFE472223CDA00003E3263 /* Build configuration list for PBXProject "AutoAPIMaker" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DDEFE46E223CDA00003E3263;
+			productRefGroup = DDEFE478223CDA00003E3263 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DDEFE476223CDA00003E3263 /* AutoAPIMaker */,
+				DDEFE48C223CDA04003E3263 /* AutoAPIMakerTests */,
+				DDEFE497223CDA04003E3263 /* AutoAPIMakerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DDEFE475223CDA00003E3263 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDEFE481223CDA03003E3263 /* Assets.xcassets in Resources */,
+				DDEFE484223CDA03003E3263 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDEFE48B223CDA04003E3263 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDEFE496223CDA04003E3263 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DDEFE473223CDA00003E3263 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDEFE47F223CDA00003E3263 /* ViewController.m in Sources */,
+				DDEFE487223CDA03003E3263 /* main.m in Sources */,
+				DDEFE47C223CDA00003E3263 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDEFE489223CDA04003E3263 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDEFE492223CDA04003E3263 /* AutoAPIMakerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDEFE494223CDA04003E3263 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDEFE49D223CDA04003E3263 /* AutoAPIMakerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DDEFE48F223CDA04003E3263 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDEFE476223CDA00003E3263 /* AutoAPIMaker */;
+			targetProxy = DDEFE48E223CDA04003E3263 /* PBXContainerItemProxy */;
+		};
+		DDEFE49A223CDA04003E3263 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDEFE476223CDA00003E3263 /* AutoAPIMaker */;
+			targetProxy = DDEFE499223CDA04003E3263 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DDEFE482223CDA03003E3263 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDEFE483223CDA03003E3263 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DDEFE49F223CDA04003E3263 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		DDEFE4A0223CDA04003E3263 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		DDEFE4A2223CDA04003E3263 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AutoAPIMaker/AutoAPIMaker.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = SXV4N6YG2P;
+				INFOPLIST_FILE = AutoAPIMaker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dyvault.AutoAPIMaker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DDEFE4A3223CDA04003E3263 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AutoAPIMaker/AutoAPIMaker.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = SXV4N6YG2P;
+				INFOPLIST_FILE = AutoAPIMaker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dyvault.AutoAPIMaker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DDEFE4A5223CDA04003E3263 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = SXV4N6YG2P;
+				INFOPLIST_FILE = AutoAPIMakerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dyvault.AutoAPIMakerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AutoAPIMaker.app/Contents/MacOS/AutoAPIMaker";
+			};
+			name = Debug;
+		};
+		DDEFE4A6223CDA04003E3263 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = SXV4N6YG2P;
+				INFOPLIST_FILE = AutoAPIMakerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dyvault.AutoAPIMakerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AutoAPIMaker.app/Contents/MacOS/AutoAPIMaker";
+			};
+			name = Release;
+		};
+		DDEFE4A8223CDA04003E3263 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = SXV4N6YG2P;
+				INFOPLIST_FILE = AutoAPIMakerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dyvault.AutoAPIMakerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = AutoAPIMaker;
+			};
+			name = Debug;
+		};
+		DDEFE4A9223CDA04003E3263 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = SXV4N6YG2P;
+				INFOPLIST_FILE = AutoAPIMakerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dyvault.AutoAPIMakerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = AutoAPIMaker;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DDEFE472223CDA00003E3263 /* Build configuration list for PBXProject "AutoAPIMaker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDEFE49F223CDA04003E3263 /* Debug */,
+				DDEFE4A0223CDA04003E3263 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDEFE4A1223CDA04003E3263 /* Build configuration list for PBXNativeTarget "AutoAPIMaker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDEFE4A2223CDA04003E3263 /* Debug */,
+				DDEFE4A3223CDA04003E3263 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDEFE4A4223CDA04003E3263 /* Build configuration list for PBXNativeTarget "AutoAPIMakerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDEFE4A5223CDA04003E3263 /* Debug */,
+				DDEFE4A6223CDA04003E3263 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDEFE4A7223CDA04003E3263 /* Build configuration list for PBXNativeTarget "AutoAPIMakerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDEFE4A8223CDA04003E3263 /* Debug */,
+				DDEFE4A9223CDA04003E3263 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DDEFE46F223CDA00003E3263 /* Project object */;
+}
