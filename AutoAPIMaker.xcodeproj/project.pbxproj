@@ -14,6 +14,7 @@
 		DDEFE487223CDA03003E3263 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEFE486223CDA03003E3263 /* main.m */; };
 		DDEFE492223CDA04003E3263 /* AutoAPIMakerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEFE491223CDA04003E3263 /* AutoAPIMakerTests.m */; };
 		DDEFE49D223CDA04003E3263 /* AutoAPIMakerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEFE49C223CDA04003E3263 /* AutoAPIMakerUITests.m */; };
+		DDEFE4AC223F462F003E3263 /* OCParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = DDEFE4AB223F462F003E3263 /* OCParameter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		DDEFE498223CDA04003E3263 /* AutoAPIMakerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoAPIMakerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDEFE49C223CDA04003E3263 /* AutoAPIMakerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoAPIMakerUITests.m; sourceTree = "<group>"; };
 		DDEFE49E223CDA04003E3263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDEFE4AA223F462F003E3263 /* OCParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCParameter.h; sourceTree = "<group>"; };
+		DDEFE4AB223F462F003E3263 /* OCParameter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCParameter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,8 @@
 				DDEFE47B223CDA00003E3263 /* AppDelegate.m */,
 				DDEFE47D223CDA00003E3263 /* ViewController.h */,
 				DDEFE47E223CDA00003E3263 /* ViewController.m */,
+				DDEFE4AA223F462F003E3263 /* OCParameter.h */,
+				DDEFE4AB223F462F003E3263 /* OCParameter.m */,
 				DDEFE480223CDA03003E3263 /* Assets.xcassets */,
 				DDEFE482223CDA03003E3263 /* Main.storyboard */,
 				DDEFE485223CDA03003E3263 /* Info.plist */,
@@ -198,6 +203,11 @@
 				TargetAttributes = {
 					DDEFE476223CDA00003E3263 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 					DDEFE48C223CDA04003E3263 = {
 						CreatedOnToolsVersion = 10.1;
@@ -263,6 +273,7 @@
 				DDEFE47F223CDA00003E3263 /* ViewController.m in Sources */,
 				DDEFE487223CDA03003E3263 /* main.m in Sources */,
 				DDEFE47C223CDA00003E3263 /* AppDelegate.m in Sources */,
+				DDEFE4AC223F462F003E3263 /* OCParameter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,7 +435,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = AutoAPIMaker/AutoAPIMaker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = SXV4N6YG2P;
@@ -442,7 +452,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = AutoAPIMaker/AutoAPIMaker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = SXV4N6YG2P;

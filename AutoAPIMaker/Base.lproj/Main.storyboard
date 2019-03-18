@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +675,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider=""/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -683,7 +685,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Swagger APIMaker" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -703,15 +705,85 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="781" height="584"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GIt-kW-spE">
+                                <rect key="frame" x="18" y="547" width="124" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Swagger API-DOCS" id="Ed6-iH-t8D">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2bE-HF-6H3">
+                                <rect key="frame" x="20" y="187" width="741" height="350"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="qj3-bB-Uu1"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="Sgc-cG-Bpj">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ziA-lt-OmR">
+                                <rect key="frame" x="314" y="55" width="154" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="142" id="iKz-YT-Ysj"/>
+                                    <constraint firstAttribute="height" constant="21" id="vvm-1f-Lig"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="一键生成API类文件" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hMB-yi-Q3z">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="makeButtonTap:" target="XfG-lQ-9wD" id="Vui-pF-9xs"/>
+                                </connections>
+                            </button>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mV4-Mg-weO">
+                                <rect key="frame" x="20" y="113" width="741" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" title="/Users/tanpopo/Desktop/API/" drawsBackground="YES" id="3Ut-S2-pkV">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6pP-lc-ezY">
+                                <rect key="frame" x="18" y="155" width="297" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="输出文件夹（如/Users/tanpopo/Desktop/API）" id="usj-SF-KPv">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ziA-lt-OmR" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="2Bi-on-kV3"/>
+                            <constraint firstItem="ziA-lt-OmR" firstAttribute="top" secondItem="mV4-Mg-weO" secondAttribute="bottom" constant="30" id="8aW-ok-V3U"/>
+                            <constraint firstItem="GIt-kW-spE" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Fnb-KE-Qzq"/>
+                            <constraint firstItem="6pP-lc-ezY" firstAttribute="leading" secondItem="2bE-HF-6H3" secondAttribute="leading" id="N1R-dF-ytv"/>
+                            <constraint firstAttribute="trailing" secondItem="2bE-HF-6H3" secondAttribute="trailing" constant="20" id="Ng6-ne-ZYL"/>
+                            <constraint firstItem="2bE-HF-6H3" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="QMC-Dm-01R"/>
+                            <constraint firstItem="GIt-kW-spE" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="XDB-zF-JZz"/>
+                            <constraint firstAttribute="trailing" secondItem="mV4-Mg-weO" secondAttribute="trailing" constant="20" id="cKA-Hy-1aS"/>
+                            <constraint firstItem="mV4-Mg-weO" firstAttribute="top" secondItem="6pP-lc-ezY" secondAttribute="bottom" constant="20" id="fLf-zW-VNh"/>
+                            <constraint firstItem="mV4-Mg-weO" firstAttribute="leading" secondItem="2bE-HF-6H3" secondAttribute="leading" id="fqi-HA-Ca1"/>
+                            <constraint firstItem="6pP-lc-ezY" firstAttribute="top" secondItem="2bE-HF-6H3" secondAttribute="bottom" constant="15" id="kY9-le-l6D"/>
+                            <constraint firstItem="2bE-HF-6H3" firstAttribute="top" secondItem="GIt-kW-spE" secondAttribute="bottom" constant="10" id="r3X-Op-3hN"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="inputTextField" destination="2bE-HF-6H3" id="X7Z-I9-Jdb"/>
+                        <outlet property="makeButton" destination="ziA-lt-OmR" id="GNt-Ir-k5A"/>
+                        <outlet property="outPathTextField" destination="mV4-Mg-weO" id="QQY-wA-w89"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="225.5" y="1312"/>
         </scene>
     </scenes>
 </document>
