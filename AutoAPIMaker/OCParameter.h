@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (copy,nonatomic) NSString *parameterName;
 @property (assign) Class parameterType; // NSString NSNumber ,etc
 @property (copy,nonatomic) NSString *httpParameterType; // path ,query ,post ,etc
+@property (copy,nonatomic) NSString *parameterDescription;
 
 - (NSString *)firstAplhaUpperCaseName ;
 

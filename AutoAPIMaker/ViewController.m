@@ -12,6 +12,8 @@
 @property (weak) IBOutlet NSTextField *inputTextField;
 @property (weak) IBOutlet NSButton *makeButton;
 @property (weak) IBOutlet NSTextField *outPathTextField;
+@property (strong) NSDictionary *swagger_dict ;
+
 @end
 
 @implementation ViewController
@@ -40,6 +42,7 @@
         [self showDifferentAlert:sender];
         return ;
     }
+    _swagger_dict = jsonDict;
     NSDictionary *paths = jsonDict[@"paths"];
     for ( NSString *key in paths) {
         [self makeFileByApiPathDict:paths[key] apiPath:key];
@@ -56,15 +59,25 @@
             NSDictionary *httpMethodDict = apiPathDict[apiPathItem];
             NSArray<OCParameter *> *parametersArr = [self getParametersByHttpParametersArr:httpMethodDict[@"parameters"]];
             NSString *methodBodyString = [self createMethodByParametersArray:parametersArr ];
-            [self make_h_file:fileName methodBodyStr:methodBodyString];
-            
+            NSString *summary = httpMethodDict[@"summary"];
+            [self make_h_file:fileName methodBodyStr:methodBodyString summary:summary];
+            [self make_m_file:fileName
+                methodBodyStr:methodBodyString
+                parametersArr:parametersArr
+                      apiPath:apiPath
+                   httpMethod:apiPathItem summary:summary];
         }
     }
 }
-- (void)make_h_file:(NSString *)filename methodBodyStr:(NSString *)methodBody {
+- (void)make_h_file:(NSString *)filename
+      methodBodyStr:(NSString *)methodBody
+            summary:(NSString *)summary{
     NSMutableString *oc_hCodeStr = [[NSMutableString alloc] init];
     NSString *dir = self.outPathTextField.stringValue;
     NSString *path = [NSString stringWithFormat:@"%@%@.h",dir,filename];
+    
+    [oc_hCodeStr appendString:@"// created by swagger-occode api maker\n"];
+    [oc_hCodeStr appendString:[NSString stringWithFormat:@"// summary:%@\n",summary]];
     [oc_hCodeStr appendString:@"#import \"ServModel.h\"\n"];
     [oc_hCodeStr appendString:[NSString stringWithFormat:@"@interface %@ : ServModel\n",filename]];
     [oc_hCodeStr appendString:methodBody];
@@ -72,6 +85,59 @@
     [oc_hCodeStr appendString:@"@end\n"];
     NSError *err = nil;
     [oc_hCodeStr writeToURL:[NSURL fileURLWithPath:path] atomically:YES encoding:NSUTF8StringEncoding error:&err];
+    if (err) {
+        NSLog(@"%@",err);
+    }
+}
+- (void) make_m_file:(NSString *)fileName
+      methodBodyStr:(NSString *)methodBody
+       parametersArr:(NSArray<OCParameter *> *)parametersArr
+             apiPath:(NSString *)apiPath httpMethod:(NSString *)httpMethod
+             summary:(NSString *)summary {
+    
+    NSMutableString *oc_mCodeStr = [[NSMutableString alloc] init];
+    
+    [oc_mCodeStr appendString:@"// created by swagger-occode api maker\n"];
+    [oc_mCodeStr appendString:[NSString stringWithFormat:@"// summary:%@\n",summary]];
+    NSString *dir = self.outPathTextField.stringValue;
+    NSString *path = [NSString stringWithFormat:@"%@%@.m",dir,fileName];
+    NSError *err = nil;
+    NSString *importStr = [NSString stringWithFormat:@"#import \"%@.h\"\n",fileName];
+    [oc_mCodeStr appendString:importStr];
+    NSString *impstr = [NSString stringWithFormat:@"@implementation %@\n",fileName];
+    [oc_mCodeStr appendString:impstr];
+    [oc_mCodeStr appendString:methodBody];
+    [oc_mCodeStr appendString:@" {\n"];
+    [oc_mCodeStr appendString:[NSString stringWithFormat:@"  NSString *apiPath = @\"%@\";\n",apiPath]];
+    NSMutableString  *oc_pathParaSetting = [[NSMutableString alloc] init];
+    NSMutableString  *oc_mainParaSetting = [[NSMutableString alloc] init];
+    for (OCParameter *oc_parameter in parametersArr) {
+        if ([oc_parameter.httpParameterType isEqualToString:@"path"]) {
+            NSString *para = [NSString stringWithFormat:@"{%@}",oc_parameter.parameterName];\
+            NSString *pathParamSetCode = @"";
+            if (oc_parameter.parameterType == NSNumber.class) {
+              pathParamSetCode = [NSString stringWithFormat:@"  apiPath = [apiPath stringByReplacingOccurrencesOfString:@\"%@\" withString:@(%@).stringValue];\n",para,oc_parameter.displayName];
+            }else if (oc_parameter.parameterType == NSString.class){
+                pathParamSetCode = [NSString stringWithFormat:@"  apiPath = [apiPath stringByReplacingOccurrencesOfString:@\"%@\" withString:%@)];\n",para,oc_parameter.displayName];
+            }
+            [oc_pathParaSetting appendString:pathParamSetCode];
+            
+        }else {
+            NSString *setCode = [NSString stringWithFormat: @"  self.requestDict[@\"%@\"] = %@; //%@\n",oc_parameter.parameterName,oc_parameter.displayName,oc_parameter.parameterDescription];
+            [oc_mainParaSetting appendString:setCode];
+        }
+    }
+
+    NSDictionary *methodMap = @{@"get":@"HTTPMethodGET",
+                                @"post":@"HTTPMethodPOST",
+                                @"put":@"HTTPMethodPUT",
+                                @"delete":@"HTTPMethodDELETE"};
+    [oc_mainParaSetting appendString:[NSString stringWithFormat:@"  [self connectWithRquestMethod:%@];\n",methodMap[httpMethod]]];
+    [oc_mCodeStr appendString:oc_pathParaSetting];
+    [oc_mCodeStr appendString:oc_mainParaSetting];
+    [oc_mCodeStr appendString:@"}\n@end\n"];
+    [oc_mCodeStr writeToURL:[NSURL fileURLWithPath:path] atomically:YES encoding:NSUTF8StringEncoding error:&err];
+    
     if (err) {
         NSLog(@"%@",err);
     }
@@ -145,16 +211,20 @@
     for (NSDictionary *parameterDict in parametersArr) {
         NSString *_in =  parameterDict[@"in"];
         if ([self isNotInHttpHead:_in]) continue ;
+        
         if ([_in isEqualToString:@"body"]) {
            NSString *ref = parameterDict[@"schema"][@"$ref"];
            NSString *bodyDefineKey = [ref componentsSeparatedByString:@"/"].lastObject;
-            
+           NSArray<OCParameter *> *ocParameters = [self getParamertersByDefinetionProperties:_swagger_dict[@"definitions"][bodyDefineKey][@"properties"]];
+            [parameters addObjectsFromArray:ocParameters];
+           
         } else if ([_in isEqualToString:@"query"] ||
                    [_in isEqualToString:@"path"]) {
             
             OCParameter *ocParameter = [[OCParameter alloc] init];
             ocParameter.parameterName = parameterDict[@"name"];
             ocParameter.httpParameterType = _in;
+            ocParameter.parameterDescription = parameterDict[@"description"];
             [parameters addObject:ocParameter];
             if ([parameterDict[@"type"] isEqualToString:@"integer"] ||
                 [parameterDict[@"type"] isEqualToString:@"number"]) {
@@ -164,6 +234,26 @@
                 ocParameter.parameterType = NSString.class;
             }
         }
+    }
+    return parameters;
+}
+- (NSArray<OCParameter *> *)getParamertersByDefinetionProperties:(NSDictionary *)properties {
+    NSMutableArray *parameters = [[NSMutableArray alloc] init];
+    for (NSString *key in properties) {
+        NSDictionary *parameterDict = properties[key];
+        OCParameter *ocParameter = [[OCParameter alloc] init];
+        ocParameter.parameterName = key ;
+        ocParameter.parameterDescription = parameterDict[@"description"];
+        NSString *rawType = parameterDict[@"type"];
+        ocParameter.httpParameterType = rawType;
+        if ([rawType isEqualToString:@"integer"] ||
+           [rawType isEqualToString:@"number"]) {
+            ocParameter.parameterType = NSNumber.class;
+        }
+        if ([rawType isEqualToString:@"string"]) {
+            ocParameter.parameterType = NSString.class;
+        }
+        [parameters addObject:ocParameter];
     }
     return parameters;
 }
