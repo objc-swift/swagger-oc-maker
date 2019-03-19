@@ -13,7 +13,7 @@
 @property (weak) IBOutlet NSButton *makeButton;
 @property (weak) IBOutlet NSTextField *outPathTextField;
 @property (strong) NSDictionary *swagger_dict ;
-
+@property (copy) NSString *curDateStr;
 @end
 
 @implementation ViewController
@@ -51,6 +51,9 @@
 
 - (void)makeFileByApiPathDict:(NSDictionary *)apiPathDict
                       apiPath:(NSString *)apiPath {
+    NSTimeInterval curDateInterval = [[NSDate date] timeIntervalSince1970];
+    
+    self.curDateStr = [self timeWithTimeInterval_allNumberStyleString:curDateInterval];
     
     for (NSString *apiPathItem in apiPathDict) {
         if ([self isHttpMethodStr:apiPathItem]) {
@@ -75,8 +78,8 @@
     NSMutableString *oc_hCodeStr = [[NSMutableString alloc] init];
     NSString *dir = self.outPathTextField.stringValue;
     NSString *path = [NSString stringWithFormat:@"%@%@.h",dir,filename];
-    
-    [oc_hCodeStr appendString:@"// created by swagger-occode api maker\n"];
+    [oc_hCodeStr appendString:@"// https://github.com/objc94 \n"];
+    [oc_hCodeStr appendString:[NSString stringWithFormat:@"// created by swagger-occode api maker at %@\n",self.curDateStr]];
     [oc_hCodeStr appendString:[NSString stringWithFormat:@"// summary:%@\n",summary]];
     [oc_hCodeStr appendString:@"#import \"ServModel.h\"\n"];
     [oc_hCodeStr appendString:[NSString stringWithFormat:@"@interface %@ : ServModel\n",filename]];
@@ -96,8 +99,8 @@
              summary:(NSString *)summary {
     
     NSMutableString *oc_mCodeStr = [[NSMutableString alloc] init];
-    
-    [oc_mCodeStr appendString:@"// created by swagger-occode api maker\n"];
+    [oc_mCodeStr appendString:@"// https://github.com/objc94 \n"];
+    [oc_mCodeStr appendString:[NSString stringWithFormat:@"// created by swagger-occode api maker at %@\n",self.curDateStr]];
     [oc_mCodeStr appendString:[NSString stringWithFormat:@"// summary:%@\n",summary]];
     NSString *dir = self.outPathTextField.stringValue;
     NSString *path = [NSString stringWithFormat:@"%@%@.m",dir,fileName];
@@ -289,6 +292,20 @@
         return nil;
     }
     return dic;
+}
+
+- (NSString *)timeWithTimeInterval_allNumberStyleString:( NSInteger)time
+{
+    // 格式化时间
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    formatter.timeZone = [NSTimeZone timeZoneWithName:@"shanghai"];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    // 毫秒值转化为秒
+    NSDate* date = [NSDate dateWithTimeIntervalSince1970:time ];
+    NSString* dateString = [formatter stringFromDate:date];
+    return dateString;
 }
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
