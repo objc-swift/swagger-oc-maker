@@ -124,13 +124,12 @@
                 pathParamSetCode = [NSString stringWithFormat:@"  apiPath = [apiPath stringByReplacingOccurrencesOfString:@\"%@\" withString:%@)];\n",para,oc_parameter.displayName];
             }
             [oc_pathParaSetting appendString:pathParamSetCode];
-            
         }else {
             NSString *setCode = [NSString stringWithFormat: @"  self.requestDict[@\"%@\"] = %@; //%@\n",oc_parameter.parameterName,oc_parameter.displayName,oc_parameter.parameterDescription];
             [oc_mainParaSetting appendString:setCode];
         }
     }
-
+    [oc_mainParaSetting appendString:@"  self.apiPath  = apiPath;\n"];
     NSDictionary *methodMap = @{@"get":@"HTTPMethodGET",
                                 @"post":@"HTTPMethodPOST",
                                 @"put":@"HTTPMethodPUT",
