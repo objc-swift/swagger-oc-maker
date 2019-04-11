@@ -119,7 +119,7 @@
             NSString *para = [NSString stringWithFormat:@"{%@}",oc_parameter.parameterName];\
             NSString *pathParamSetCode = @"";
             if (oc_parameter.parameterType == NSNumber.class) {
-              pathParamSetCode = [NSString stringWithFormat:@"  apiPath = [apiPath stringByReplacingOccurrencesOfString:@\"%@\" withString:@(%@).stringValue];\n",para,oc_parameter.displayName];
+              pathParamSetCode = [NSString stringWithFormat:@"  apiPath = [apiPath stringByReplacingOccurrencesOfString:@\"%@\" withString:@%@.stringValue];\n",para,oc_parameter.displayName];
             }else if (oc_parameter.parameterType == NSString.class){
                 pathParamSetCode = [NSString stringWithFormat:@"  apiPath = [apiPath stringByReplacingOccurrencesOfString:@\"%@\" withString:%@)];\n",para,oc_parameter.displayName];
             }
